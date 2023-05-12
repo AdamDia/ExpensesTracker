@@ -25,12 +25,8 @@ function RecentExpenses() {
     getExpenses();
   }, []);
 
-  function errorHandler() {
-    setError(null) //we could try to fetch the data again here after pressing the okay button
-  }
-
   if (error && !isFetching) {
-    return <ErrorOverlay message={error} onConfirm={errorHandler}/>
+    return <ErrorOverlay message={error}/>
   }
 
   if (isFetching) {
